@@ -28,6 +28,14 @@ module MailForm
       false
     end
 
+    def deliver
+      if valid?
+        MailForm::Notifier.contact(self).deliver
+      else
+        false
+      end
+    end
+
     protected
     # Since we declared a "clear_" prefix, it expects to have a
     # "clear_attribute" method defined.
