@@ -16,6 +16,7 @@ gem "jquery-rails"
 # To use debugger
 # gem 'debugger'
 
+gem "capybara"
 gem "pry"
 gem "pry-debugger"
 gem "pry-coolline"

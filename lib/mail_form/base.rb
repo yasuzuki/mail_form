@@ -11,6 +11,12 @@ module MailForm
     class_attribute :_attributes
     self._attributes = []
 
+    def initialize(attributes = {})
+      attributes.each do |attr, value|
+        self.send("#{attr}=", value)
+      end unless attributes.blank?
+    end
+
     def self.attributes(*names)
       attr_accessor *names
       define_attribute_methods names
